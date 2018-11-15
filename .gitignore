@@ -17,6 +17,9 @@
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+**/.vs
+**/.vscode
+
 #Typescript
 node_modules/
 .node_modules/
@@ -24,3 +27,4 @@ bin
 obj
 src/**/*.js
 src/**/*.map
+package-lock.json
