@@ -1,0 +1,2 @@
+C:\Users\R001-HasanA\TestAir\obj\Debug\TestAir.njsproj.CoreCompileInputs.cache
+C:\Users\R001-HasanA\TestAir\bin\Microsoft.NodejsTools.WebRole.dll
