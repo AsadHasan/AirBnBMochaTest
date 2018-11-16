@@ -1,13 +1,13 @@
 import {expect} from "chai";
-import {Builder, Capabilities, ThenableWebDriver, WebElement} from "selenium-webdriver";
+import "chromedriver";
+import {Builder, ThenableWebDriver, WebElement} from "selenium-webdriver";
+
 import {Homepage} from "../pages/homepage";
 
 describe("home button on homepage", (): void => {
     let driver: ThenableWebDriver;
 
-    before(() => driver = new Builder()
-        .withCapabilities(Capabilities.chrome())
-        .build());
+    before(() => driver = new Builder().forBrowser("chrome").build());
     it("should return results", async (): Promise<void> => {
         const homepage: Homepage = new Homepage(driver);
         const homes: Promise<WebElement[]> = homepage.open()

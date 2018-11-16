@@ -2,8 +2,8 @@ import {By, Locator, ThenableWebDriver, until, WebElement} from "selenium-webdri
 import {SearchResults} from "./searchresults";
 
 export class Homepage {
-    public driver: ThenableWebDriver;
-    public homeButtonLocator: Locator = (By.css("[data-veloute='explore-nav-card:/homes']"));
+    private readonly driver: ThenableWebDriver;
+    private homeButtonLocator: Locator = (By.css("[data-veloute='explore-nav-card:/homes']"));
 
     constructor(driver: ThenableWebDriver) {
         this.driver = driver;

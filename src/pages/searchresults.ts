@@ -1,8 +1,8 @@
 import {By, Locator, ThenableWebDriver, until, WebElement} from "selenium-webdriver";
 
 export class SearchResults {
-    public driver: ThenableWebDriver;
-    public resultsLocator: Locator = (By.css("[data-container-name='explore']"));
+    private driver: ThenableWebDriver;
+    private resultsLocator: Locator = (By.css("[data-container-name='explore']"));
 
     constructor(driver: ThenableWebDriver) {
         this.driver = driver;

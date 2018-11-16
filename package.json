@@ -7,7 +7,7 @@
     "test": "src/tests"
   },
   "scripts": {
-    "test": "mocha %NODE_DEBUG_OPTION% -r ts-node/register **/*test.ts --timeout 15000"
+    "test": "mocha -r ts-node/register **/*test.ts --timeout 15000"
   },
   "author": "Asad Hasan",
   "license": "ISC",
