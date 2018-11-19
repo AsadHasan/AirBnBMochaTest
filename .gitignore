@@ -10,4 +10,4 @@ obj
 src/**/*.js
 src/**/*.map
 package-lock.json
-mochawesome
+mochawesome*
