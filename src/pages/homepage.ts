@@ -10,7 +10,7 @@ import { SearchResults } from "./searchresults";
 export class Homepage {
   private readonly driver: ThenableWebDriver;
   private homeButtonLocator: Locator = By.css(
-    "[data-veloute='explore-nav-card:/homes']"
+    "[data-veloute='explore-nav-card:/homes']>div"
   );
 
   constructor(driver: ThenableWebDriver) {
@@ -18,7 +18,7 @@ export class Homepage {
   }
 
   public async getHomes(): Promise<SearchResults> {
-    this.driver.wait(until.elementLocated(this.homeButtonLocator));
+    await this.driver.wait(until.elementLocated(this.homeButtonLocator));
     const homebutton: WebElement = this.driver.findElement(
       this.homeButtonLocator
     );
@@ -29,9 +29,6 @@ export class Homepage {
 
   public async open(): Promise<Homepage> {
     await this.driver.get("https://www.airbnb.ie/");
-    this.driver.wait(
-      until.titleIs("Holiday Rentals, Homes, Experiences & Places - Airbnb")
-    );
     return this;
   }
 }
