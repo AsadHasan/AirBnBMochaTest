@@ -16,5 +16,5 @@ describe("'homes' button on homepage", (): void => {
       .then(value => value.getResults());
     await expect(await homes).to.not.be.empty;
   });
-  after(async (): Promise<void> => await driver.quit());
+  after(async (): Promise<void> => driver.quit());
 });
