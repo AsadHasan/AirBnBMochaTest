@@ -17,7 +17,8 @@ export class Homepage {
     }
 
     public async open(): Promise<Homepage> {
-        await this.driver.get("https://www.airbnb.ie/");
-        return this;
+        const homepage: this = this;
+        await homepage.driver.get("https://www.airbnb.ie/");
+        return homepage;
     }
 }
