@@ -5,6 +5,7 @@
 **/*.sln
 node_modules/
 .node_modules/
+TestResults/
 bin
 obj
 src/**/*.js

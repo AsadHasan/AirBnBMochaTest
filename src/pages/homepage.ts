@@ -19,10 +19,10 @@ export class Homepage {
 
   public async getHomes(): Promise<SearchResults> {
     await this.driver.wait(until.elementLocated(this.homeButtonLocator));
-    const homebutton: WebElement = this.driver.findElement(
+    const homebutton: WebElement = await this.driver.findElement(
       this.homeButtonLocator
     );
-    this.driver.wait(until.elementIsEnabled(homebutton));
+    await this.driver.wait(until.elementIsEnabled(homebutton));
     await homebutton.click();
     return new SearchResults(this.driver);
   }

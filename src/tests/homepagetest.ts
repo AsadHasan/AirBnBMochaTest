@@ -6,11 +6,13 @@ import * as fs from "fs";
 import { Homepage } from "../pages/homepage";
 import { SearchResults } from "../pages/searchresults";
 
-describe("'homes' button on homepage", (): void => {
+describe("'homes' button on homepage", function() {
   let driver: ThenableWebDriver;
 
-  before(() => (driver = new Builder().forBrowser("chrome").build()));
-  it("should return results", async (): Promise<void> => {
+  before(function() {
+    driver = new Builder().forBrowser("chrome").build();
+  });
+  it("should return results", async function() {
     const homepage: Homepage = await new Homepage(driver).open();
     const searchResults: SearchResults = await homepage.getHomes();
     const homes: WebElement[] = await searchResults.getResults();
@@ -18,15 +20,17 @@ describe("'homes' button on homepage", (): void => {
   });
   afterEach(async function() {
     if (this.currentTest !== undefined) {
-      const testName: string = this.currentTest.title;
-      const testState = this.currentTest.state;
+      const testName: string = await this.currentTest.title.replace(/\s/g, "");
+      const testState = await this.currentTest.state;
 
       if (testState === "failed") {
         const screenshot: string = await driver.takeScreenshot();
         const screenshotPath: string = `TestResults/Screenshots/${testName}.png`;
-        fs.writeFileSync(screenshotPath, screenshot, "base64");
+        await fs.writeFileSync(screenshotPath, screenshot, "base64");
       }
     }
   });
-  after(async (): Promise<void> => driver.quit());
+  after(async function() {
+    await driver.quit();
+  });
 });
